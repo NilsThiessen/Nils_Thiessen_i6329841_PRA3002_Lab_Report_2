@@ -1,0 +1,94 @@
+\documentclass[12pt]{article}
+
+
+%--------- Packages ----------------
+
+\usepackage{wrapfig}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{tabularx}
+\usepackage[a4paper,left=1in,right=1in,top=1in,bottom=1in]{geometry}
+\usepackage{enumitem}
+\usepackage{newtxtext} % If you need to use Time New Roman
+\usepackage{newtxmath} % If you need to use Time New Roman
+\usepackage[style=ieee,backend=biber]{biblatex}
+\usepackage[british]{babel}
+\usepackage{csquotes}
+\usepackage{bookmark}
+\usepackage{setspace}
+\usepackage{fancyhdr}
+\usepackage[font=footnotesize,justification=centering]{caption}
+\usepackage{hyperref}
+\usepackage{float}
+\usepackage{caption}   % For controlling captions
+\usepackage{setspace}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{gensymb}
+\usepackage{mathastext}  % Use New Century Schoolbook font for 
+\usepackage{textcomp}
+\usepackage[upgreek, LGRgreek]{mathastext}
+
+
+%--------- Set Up ------------------
+\setstretch{1.4}
+\pagestyle{fancy}
+\fancypagestyle{plain}{%
+  \renewcommand{\headrulewidth}{0pt}%
+  \fancyhf{}}
+\addbibresource{references.bib}
+
+
+% Stuff about lists
+\setlist[itemize,1]{itemsep=-0.7em,topsep=0.1pt, before=\vspace{0.5em}}  % Reduce space between items in the first-level list
+\setlist[itemize,2]{itemsep=-0.2em,topsep=0pt, parsep=0pt, partopsep=0pt, before=\vspace{-0.6em},after=\vspace{0.6em}}  % Reduce space between items in the second-level list
+% Reduce line spacing for second-level lists
+\newenvironment{tightitemize}{%
+    \begin{itemize}
+    \setstretch{1}  % Adjust the number to reduce line spacing
+}{%
+    \end{itemize}
+}
+
+% --- title insert (check title.tex for more)----------
+
+\title{T1 – Heat Engine / Gas Law Apparatus} % TITLE HERE 
+
+
+%-------- Document -----------------
+
+\begin{document}
+
+\input{title.tex}
+
+\fancyhf{}
+\setlength{\headheight}{33pt}
+\fancyhead[L]{\nouppercase{\leftmark}}
+\fancyhead[R]{\includegraphics[width=0.7cm]{Graphics/UM_SMALL.png}}
+\fancyfoot[L]{\emph{PRA3002 Lab Report T1} }
+%\pagenumbering{gobble}
+
+%\setmathfont{Cambria Math}  % Set the math font to Cambria 
+\addtocounter{page}{1}
+
+\newpage
+\fancyhead[L]{\textbf{Contents}}
+\tableofcontents
+\newpage
+%\pagenumbering{arabic} %ensures that pagenumbering starts after table of contents
+
+\fancyhf{}
+\setlength{\headheight}{33pt}
+\fancyhead[L]{\nouppercase{\leftmark}}
+\fancyhead[R]{\includegraphics[width=0.7cm]{Graphics/UM_SMALL.png}}
+\fancyfoot[R]{ \bf\thepage\ \rm }
+\fancyfoot[L]{\emph{Lab Report II} }
+
+\input{Chapters/Introduction}
+\input{Chapters/Methods}
+\input{Chapters/Results}
+\input{Chapters/Discussion}
+\input{Chapters/Conclusion}
+\newpage
+\printbibliography
+\pagebreak
+\end{document}
